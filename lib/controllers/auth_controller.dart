@@ -6,6 +6,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  Stream<User?> get authChanges => _auth.authStateChanges();
+
+  User get user => _auth.currentUser!;
+
   signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
