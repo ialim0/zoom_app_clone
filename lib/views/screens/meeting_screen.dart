@@ -31,33 +31,25 @@ class _MeetingScreenState extends State<MeetingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                ReuseableIcon(
-                  icon: Icons.videocam,
-                  text: 'New meeting',
-                  onPressed: createNewMeeting,
-                ),
-                ReuseableIcon(
-                  icon: Icons.add_box_rounded,
-                  text: 'Join Meeting',
-                  onPressed: joinMeeting,
-                ),
-                ReuseableIcon(
-                  icon: Icons.calendar_today,
-                  text: 'Schedul',
-                  onPressed: () {},
-                ),
-                ReuseableIcon(
-                  icon: Icons.arrow_upward,
-                  text: 'Share Screen',
-                  onPressed: () {},
-                ),
-              ],
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    height: 50,
+                  ),
+                  ReuseableIcon(
+                    icon: Icons.videocam,
+                    text: 'Créer une réunion  ',
+                    onPressed: createNewMeeting,
+                  ),
+                  ReuseableIcon(
+                    icon: Icons.add_box_rounded,
+                    text: 'Rejoindre une réunion à l\'aide ID ',
+                    onPressed: joinMeeting,
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: Center(
